@@ -1,4 +1,9 @@
-FROM qnib/uplain-cuda8
+ARG FROM_IMG_REGISTRY=docker.io
+ARG FROM_IMG_REPO=qnib
+ARG FROM_IMG_NAME="uplain-cuda8"
+ARG FROM_IMG_TAG="8.0.61-1.3"
+ARG FROM_IMG_HASH=""
+FROM ${FROM_IMG_REGISTRY}/${FROM_IMG_REPO}/${FROM_IMG_NAME}:${FROM_IMG_TAG}${DOCKER_IMG_HASH}
 
 ARG NV_URL=http://developer.download.nvidia.com/compute/redist/cudnn
 # NV_CUDA_VER is set by parent
